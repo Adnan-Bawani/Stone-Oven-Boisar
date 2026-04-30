@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap');
+
+:root {
+  /* Ultra-Premium Moody Palette */
+  --bg-color: #060907; /* Almost black forest green */
+  --surface-color: #0c120e;
+  --text-primary: #F5F2EB; /* Soft alabaster/cream */
+  --text-secondary: #8E9690; /* Muted sage */
+  --accent-gold: #D4AF37; /* Refined gold */
+  --accent-neon: #ff1493; /* Subtle neon hint for the sign */
+  
+  --font-serif: 'Playfair Display', serif;
+  --font-sans: 'Inter', sans-serif;
+  
+  --transition-smooth: 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-fast: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; font-size: 16px; background-color: var(--bg-color); }
+body {
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  line-height: 1.5;
+}
+
+/* Typography Mastery */
+h1, h2, h3, h4, h5, h6 { font-family: var(--font-serif); font-weight: 400; }
+.italic { font-style: italic; }
+.text-gold { color: var(--accent-gold); }
+
+.display-huge { 
+  font-size: clamp(4rem, 12vw, 10rem); 
+  line-height: 0.9; 
+  letter-spacing: -0.02em; 
+  text-transform: uppercase;
+}
+.heading-lg { font-size: clamp(3rem, 6vw, 5rem); line-height: 1.1; }
+.heading-md { font-size: clamp(1.5rem, 3vw, 2.5rem); }
+.body-lg { font-size: 1.25rem; color: var(--text-secondary); font-weight: 300; }
+
+a { color: inherit; text-decoration: none; cursor: none; } /* Custom cursor */
+ul { list-style: none; }
+img { width: 100%; height: 100%; object-fit: cover; }
+
+.container { width: 100%; max-width: 1600px; margin: 0 auto; padding: 0 4vw; }
+.section { padding: 15vh 0; }
+
+/* Custom Cursor */
+.cursor {
+  position: fixed;
+  top: 0; left: 0;
+  width: 12px; height: 12px;
+  background-color: var(--accent-gold);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s, height 0.3s, background-color 0.3s;
+  mix-blend-mode: difference;
+}
+.cursor.active {
+  width: 60px; height: 60px;
+  background-color: transparent;
+  border: 1px solid var(--accent-gold);
+}
+
+/* Hover Image Reveal (The $10k feel) */
+.hover-reveal-img {
+  position: fixed;
+  top: 0; left: 0;
+  width: 300px; height: 400px;
+  pointer-events: none;
+  opacity: 0;
+  z-index: 100;
+  transform: translate(-50%, -50%) scale(0.8);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  overflow: hidden;
+  border-radius: 4px;
+}
+.hover-reveal-img img { width: 100%; height: 100%; object-fit: cover; }
+.hover-reveal-img.visible { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+
+/* Buttons */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 15px;
+  border: 1px solid rgba(255,255,255,0.2);
+  padding: 15px 30px;
+  border-radius: 100px;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: var(--transition-fast);
+  position: relative;
+  overflow: hidden;
+}
+.btn-primary::before {
+  content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+  background: var(--text-primary);
+  transform: scaleX(0); transform-origin: right; transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+  z-index: -1;
+}
+.btn-primary:hover { color: var(--bg-color); border-color: var(--text-primary); }
+.btn-primary:hover::before { transform: scaleX(1); transform-origin: left; }

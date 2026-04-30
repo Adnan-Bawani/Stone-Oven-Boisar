@@ -1,0 +1,49 @@
+/* navbar.css */
+.navbar { position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; padding: 2vw 4vw; mix-blend-mode: difference; display: flex; justify-content: space-between; align-items: center; }
+.logo { font-family: var(--font-serif); font-size: 1.5rem; letter-spacing: 2px; text-transform: uppercase; }
+.nav-links { display: flex; gap: 3vw; }
+.nav-links a { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 2px; position: relative; overflow: hidden; display: inline-block; }
+.nav-links a::after { content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 1px; background: currentColor; transform: scaleX(0); transform-origin: right; transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1); }
+.nav-links a:hover::after { transform: scaleX(1); transform-origin: left; }
+
+/* hero.css */
+.hero { height: 100vh; position: relative; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+#hero-canvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; pointer-events: none; opacity: 0.5; }
+
+.hero-image { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; }
+.hero-image img { width: 100%; height: 100%; object-fit: cover; opacity: 0.4; filter: brightness(0.6); }
+
+.hero-content { position: relative; z-index: 2; text-align: center; display: flex; flex-direction: column; align-items: center; width: 100%; padding: 0 4vw; }
+.hero-title { display: flex; flex-direction: column; line-height: 0.85; margin-bottom: 2rem; overflow: hidden; }
+.title-line { overflow: hidden; display: block; }
+.title-word { display: inline-block; transform: translateY(110%); }
+
+.hero-subtitle { max-width: 600px; margin-bottom: 3rem; overflow: hidden; }
+.hero-subtitle p { transform: translateY(100%); opacity: 0; }
+
+.scroll-down { position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 4px; display: flex; flex-direction: column; align-items: center; gap: 10px; z-index: 2; }
+.scroll-line { width: 1px; height: 50px; background: rgba(255,255,255,0.2); position: relative; overflow: hidden; }
+.scroll-line::after { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: #fff; animation: scrollDown 2s infinite cubic-bezier(0.19, 1, 0.22, 1); }
+@keyframes scrollDown { 0% { transform: translateY(-100%); } 100% { transform: translateY(100%); } }
+
+/* about.css (The Space) */
+.about-grid { display: grid; grid-template-columns: 4fr 6fr; gap: 10vw; align-items: center; margin-top: 10vh; }
+.about-text { padding-right: 4vw; }
+.about-images { position: relative; height: 80vh; width: 100%; }
+.img-wrapper { position: absolute; overflow: hidden; border-radius: 2px; }
+.img-wrapper img { transition: transform 0.6s ease; }
+.img-wrapper:hover img { transform: scale(1.05); }
+
+.img-1 { top: 0; right: 0; width: 70%; height: 70%; z-index: 1; }
+.img-2 { bottom: 0; left: 0; width: 50%; height: 50%; z-index: 2; }
+
+/* menu.css (Minimalist List) */
+.menu-section { background-color: var(--surface-color); }
+.menu-list { display: flex; flex-direction: column; margin-top: 5rem; border-top: 1px solid rgba(255,255,255,0.1); }
+.menu-item { display: flex; justify-content: space-between; align-items: center; padding: 3vw 0; border-bottom: 1px solid rgba(255,255,255,0.1); cursor: none; transition: padding var(--transition-fast); position: relative; }
+.menu-item:hover { padding-left: 2vw; padding-right: 2vw; }
+.menu-item:hover .menu-item-title { color: var(--accent-gold); }
+.menu-item-title { font-family: var(--font-serif); font-size: clamp(2rem, 4vw, 3.5rem); transition: color var(--transition-fast); z-index: 2; }
+.menu-item-price { font-family: var(--font-sans); font-size: 1.2rem; font-weight: 300; z-index: 2; }
+.menu-item-desc { font-family: var(--font-sans); color: var(--text-secondary); max-width: 400px; font-size: 0.9rem; position: absolute; left: 50%; transform: translateX(-50%); opacity: 0; transition: opacity var(--transition-fast); z-index: 1; }
+.menu-item:hover .menu-item-desc { opacity: 1; }
