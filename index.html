@@ -1,147 +1,412 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Stone Oven | Premium Dining Experience</title>
-  </head>
-  <body>
-    <!-- Custom Cursor -->
-    <div class="cursor"></div>
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
 
-    <!-- Image Hover Reveal Container -->
-    <div class="hover-reveal-img">
-      <img id="hover-img" src="" alt="Menu Item">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stone Oven Boisar | Premium Dining Experience</title>
+  <link rel="icon" type=" image/png " href="https://i.postimg.cc/pdv13s1q/file-000000008ca8720894ce7132771a25cd.png">
+  <meta name="description"
+    content="Experience the finest Chinese, Mexican, and Italian cuisine at Stone Oven Boisar. Premium dining, cozy ambience, and unforgettable flavors." />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="/src/styles/main.css" />
+  <!-- We removed individual css files to keep everything unified in main.css -->
+</head>
+
+<body class="bg-dark text-beige font-sans antialiased overflow-x-hidden">
+
+  <!-- Loader -->
+  <div id="loader" class="fixed inset-0 z-[100] bg-dark flex items-center justify-center">
+    <h1 class="text-gold font-serif text-3xl md:text-5xl tracking-widest uppercase loader-text">Stone Oven</h1>
+  </div>
+
+  <!-- Navbar -->
+  <nav id="navbar"
+    class="fixed top-0 w-full z-50 transition-all duration-500 py-6 px-8 flex justify-between items-center">
+    <div class="logo font-serif text-2xl text-gold font-bold tracking-wider cursor-pointer flex flex-col">
+      <span>
+        <h1>&nbsp;&nbsp;&nbsp;STONE OVEN</h1>
+      </span>
+      <span class="text-[0.4rem] tracking-[0.3em] text-beige/70 uppercase">
+        <h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;सटोन ओवन बोईसर</h3>
+      </span>
     </div>
 
-    <!-- Navbar -->
-    <nav class="navbar">
-      <a href="#" class="logo">Stone Oven</a>
-      <ul class="nav-links">
-        <li><a href="#interior" class="hover-target">Interior Design</a></li>
-        <li><a href="#about" class="hover-target">About Us</a></li>
-        <li><a href="#menu" class="hover-target">Menu</a></li>
-        <li><a href="#contact" class="hover-target">Contact</a></li>
-      </ul>
-    </nav>
 
-    <!-- Hero Section -->
-    <header class="hero" id="home">
-      <div class="hero-image">
-        <!-- HERO PHOTO: Use your vertical hanging plants photo here -->
-        <img src="./assets/images/hero-plants.jpg" alt="Stone Oven Interior" data-speed="0.8" class="parallax-img">
+    <ul class="nav-links hidden md:flex space-x-8 text-sm uppercase tracking-widest text-gold font-medium">
+      <li><a href="#home" class="nav-link font-serif" style="color: peru !important;">Home</a></li>
+      <li><a href="#about" class="nav-link font-serif" style="color: peru !important;">About</a></li>
+      <li><a href="#menu" class="nav-link font-serif" style="color: peru !important;">Menu</a></li>
+      <li><a href="#reviews" class="nav-link font-serif" style="color: peru !important;">Reviews</a></li>
+      <li><a href="#gallery" class="nav-link font-serif" style="color: peru !important;">Gallery</a></li>
+      <li><a href="#contact" class="nav-link font-serif" style="color: peru !important;">Directions</a></li>
+    </ul>
+
+
+
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero relative h-screen w-full flex items-center justify-center overflow-hidden">
+    <div class="hero-bg absolute inset-0 w-full h-full">
+      <!-- Dark overlay -->
+      <div class="absolute inset-0 bg-gradient-to-b from-dark/80 via-dark/40 to-dark z-10"></div>
+
+      <!-- [USER ACTION REQUIRED: Swap your Hero Image here] -->
+      <!-- Replace the src with your own image URL or path -->
+      <img id="custom-hero-image"
+        src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAEz4AFCcEfkpQMnvDfRfiPcxmcI0Z_u7FwpuIZjDQwhEzci_ftnuGs5h16DCVdhyJm7nYBr2AQzBmduyQ_ziiM58arvYBP59_OQud3fKQ_ZBudcbDgtQoezSDaGoxz6e0fPYaNpqQADy9os=s846-k-no"
+        alt="Restaurant Ambience" class="w-full h-full object-cover parallax-img scale-110 opacity-70" />
+    </div>
+
+    <div class="hero-content relative z-20 text-center px-4 max-w-4xl mx-auto flex flex-col items-center mt-16">
+      <div class="flex items-center gap-2 hero-subtitle opacity-0 translate-y-4 mb-6">
+        <i data-lucide="star" class="w-4 h-4 text-gold fill-gold"></i>
+        <p class="text-gold uppercase tracking-[0.3em] text-sm md:text-base font-medium">4.7 / 150+ Reviews</p>
+
+        <i data-lucide="star" class="w-4 h-4 text-gold fill-gold"></i>
       </div>
-      <canvas id="hero-canvas"></canvas>
-      
-      <div class="hero-content">
-        <h1 class="display-huge hero-title">
-          <span class="title-line"><span class="title-word">Taste</span></span>
-          <span class="title-line"><span class="title-word italic text-gold">Nature.</span></span>
-        </h1>
-        <div class="hero-subtitle">
-          <p class="body-lg">An immersive botanical dining experience in Boisar.</p>
-        </div>
-        <a href="#menu" class="btn-primary hover-target">Discover Menu</a>
+
+      <h1 class="hero-title text-6xl md:text-8xl lg:text-9xl font-serif text-beige leading-tight mb-4">
+        <span class="block overflow-hidden"><span class="block line-reveal">
+            <h1>Stone Oven</h1>
+          </span></span>
+        <span class="block overflow-hidden"><span class="block line-reveal text-gold italic">
+            <h2>Boisar</h2>
+          </span></span>
+      </h1>
+      <p class="hero-subtitle text-beige/70 text-sm tracking-[0.4em] uppercase mb-12 opacity-0 translate-y-4">
+      <h2>
+        <i>
+          Where Every Bite Tells a Story
+        </i>
+      </h2>
+      </p>
+      <br>
+      <div class="hero-actions flex flex-col sm:flex-row gap-6 opacity-0 translate-y-4">
+        <a href="#menu"
+          class="btn-primary bg-gold text-dark px-8 py-4 uppercase text-sm tracking-widest hover:bg-beige hover:text-dark transition-colors duration-300 font-medium">Explore
+          Menu</a>
+        <a href="#contact"
+          class="btn-secondary border border-beige text-beige px-8 py-4 uppercase text-sm tracking-widest hover:bg-beige hover:text-dark transition-colors duration-300">Directions</a>
       </div>
+    </div>
+  </section>
 
-      <div class="scroll-down">
-        <span>Scroll</span>
-        <div class="scroll-line"></div>
-      </div>
-    </header>
-
-    <!-- Interior Design Section -->
-    <section class="section" id="interior">
-      <div class="container">
-        <div class="about-grid">
-          <div class="about-text reveal-text-container">
-            <h2 class="heading-lg" style="margin-bottom: 2rem;">Interior<br><span class="italic text-gold">Design.</span></h2>
-            <p class="body-lg">Designed to transport you. From the lush hanging flora to the arched architecture and warm bamboo glow, every detail at Stone Oven is crafted to create an unforgettable ambiance.</p>
-          </div>
-          <div class="about-images">
-            <!-- INTERIOR PHOTO 1: Use your Arched Windows photo here -->
-            <div class="img-wrapper img-1 reveal-img">
-              <img src="./assets/images/arched-windows.jpg" alt="Arched Windows" data-speed="0.9" class="parallax-img">
-            </div>
-            <!-- INTERIOR PHOTO 2: Use your Neon Sign Balcony photo here -->
-            <div class="img-wrapper img-2 reveal-img">
-              <img src="./assets/images/neon-balcony.jpg" alt="Neon Balcony" data-speed="1.1" class="parallax-img">
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- About Section -->
-    <section class="section" id="about" style="background-color: var(--surface-color);">
-      <div class="container" style="text-align: center; max-width: 800px;">
-        <h2 class="heading-lg" style="margin-bottom: 2rem;">Our <span class="italic text-gold">Story</span></h2>
-        <p class="body-lg" style="margin-bottom: 2rem;">At Stone Oven, we believe that dining is more than just food; it is an experience. Located in the heart of Boisar, we combine premium multi-cuisine dishes with a breathtaking botanical atmosphere.</p>
-        <p class="body-lg">Our chefs use the finest ingredients to craft dishes that look as beautiful as they taste. Whether you are here for a romantic dinner or a family gathering, our space is designed for your memories.</p>
-      </div>
-    </section>
-
-    <!-- Elegant Menu Section -->
-    <section class="section menu-section" id="menu">
-      <div class="container">
-        <h2 class="heading-lg" style="text-align: center;">Curated <span class="italic text-gold">Selections</span></h2>
-        
-        <div class="menu-list">
-          <!-- Pizza Example -->
-          <div class="menu-item hover-target" data-img="./assets/images/pizza.jpg">
-            <span class="menu-item-title">Mexican Non-Veg Pizza</span>
-            <span class="menu-item-desc">Capsicum, Onion, Chicken, Jalapenos, Tomato, Salsa sauce</span>
-            <span class="menu-item-price">₹369</span>
-          </div>
-
-          <!-- Starter Example -->
-          <div class="menu-item hover-target" data-img="./assets/images/starter.jpg">
-            <span class="menu-item-title">Dynamite Peri Peri</span>
-            <span class="menu-item-desc">Cooked in peri peri or jerk spice sauce served on hot plate</span>
-            <span class="menu-item-price">₹249</span>
-          </div>
-
-          <!-- Wok Example -->
-          <div class="menu-item hover-target" data-img="./assets/images/noodles.jpg">
-            <span class="menu-item-title">Sichuan Noodles</span>
-            <span class="menu-item-desc">Noodles cooked with veggies in spicy Sichuan sauce</span>
-            <span class="menu-item-price">₹319</span>
-          </div>
-
-          <!-- Main Example -->
-          <div class="menu-item hover-target" data-img="./assets/images/chicken.jpg">
-            <span class="menu-item-title">Chicken in Devil Sauce</span>
-            <span class="menu-item-desc">Chicken in fiery spicy devil sauce</span>
-            <span class="menu-item-price">₹319</span>
-          </div>
+  <!-- About Section -->
+  <section id="about" class="about py-32 px-8 bg-dark relative z-20">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+      <div class="about-image relative overflow-hidden aspect-[4/5] rounded-t-full">
+        <!-- [USER ACTION REQUIRED: Swap your About Image here] -->
+        <!-- Replace the src with your own image URL or local path -->
+        <img id="custom-about-image"
+          src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAHVMaz3iUfcxEuDu3Zs6kOZZEamnM3vbWgERkXLg0hfSaDXQN_lpY_kX8rbyQsDlMe9vnWL2n7Q01eUrlC0qLtRbKHGTMIxI4Ggsin5JTFVXI6wyavt_VhNn_s--CpM3ZnATViOu39KF50=w408-h544-k-no"
+          alt="Chef preparing food" class="w-full h-full object-cover" />
+        <div
+          class="absolute inset-0 border border-gold/30 rounded-t-full scale-95 transition-transform duration-700 hover:scale-100">
         </div>
       </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="section" id="contact" style="background-color: var(--surface-color);">
-      <div class="container">
-        <div class="about-grid" style="grid-template-columns: 1fr 1fr; gap: 5vw;">
+      <div class="about-text space-y-8 pl-0 md:pl-12">
+        <h2 class="text-white uppercase tracking-[0.2em] text-sm flex items-center gap-4">
+          <span class="w-12 h-[1px] bg-gold"></span> "Overview"
+        </h2>
+        <h3 class="text-4xl md:text-5xl lg:text-6xl font-serif text-beige leading-snug">The best restaurant in ambience
+          in Boisar.</h3>
+        <p class="text-beige/70 font-sans leading-relaxed text-lg font-light">
+          Experience an amazing blend of Chinese, Mexican, and Italian food with unparalleled taste and quality. The
+          place has a really nice vibe, and the service is quick and welcoming. A perfect combination of great food,
+          excellent service, and a lovely atmosphere.
+        </p>
+        <div class="grid grid-cols-3 gap-6 pt-8 border-t border-gold/20">
           <div>
-            <h2 class="heading-lg" style="margin-bottom: 2rem;">Visit <span class="italic text-gold">Us.</span></h2>
-            <p class="body-lg" style="margin-bottom: 1rem;"><strong>Address:</strong><br>Shop no 101, first floor, Avyu Plaza, Chillar Rd, near Union Park, beside MCD, East, Boisar, Betegaon, Maharashtra 401501</p>
-            <p class="body-lg" style="margin-bottom: 1rem;"><strong>Hours:</strong><br>Monday - Sunday: 12:00 PM – 11:00 PM</p>
-            <p class="body-lg" style="margin-bottom: 2rem;"><strong>Phone:</strong><br>+91 86683 72536</p>
-            <a href="https://wa.me/918668372536" target="_blank" class="btn-primary hover-target" style="display: inline-flex; align-items: center; justify-content: center; padding: 15px 30px; font-size: 1rem; border-radius: 50px;">Order via WhatsApp</a>
+            <p class="text-base font-semibold text-sm uppercase tracking-wider mb-2">Dine-in</p>
+            <i data-lucide="check" class="text-gold"></i>
           </div>
-          <div style="width: 100%; height: 400px; background-color: #000; border-radius: 4px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1);">
-            <!-- Embed Google Maps -->
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3760.364239841399!2d72.76615557597148!3d19.79979737401594!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be71f45f78ffcc3%3A0xc3c544bd0a4869c3!2sStone%20oven!5e0!3m2!1sen!2sus!4v1714488924045!5m2!1sen!2sus" width="100%" height="100%" style="border:0; filter: grayscale(100%) invert(90%) contrast(1.2);" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <div>
+            <p class="text-base font-semibold text-sm uppercase tracking-wider mb-2">Takeaway</p>
+            <i data-lucide="check" class="text-gold"></i>
+          </div>
+          <div>
+            <p class="text-base font-semibold text-sm uppercase tracking-wider mb-2">Delivery</p>
+            <i data-lucide="check" class="text-gold"></i>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Footer -->
-    <footer style="padding: 5vh 0; text-align: center; border-top: 1px solid rgba(255,255,255,0.1);">
-      <p class="body-lg" style="font-size: 0.9rem;">&copy; 2026 Stone Oven Boisar. All rights reserved.</p>
-    </footer>
+  <!-- Menu Section -->
+  <section id="menu" class="menu py-32 px-8 bg-[#0a0a0a] relative z-20">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-20 space-y-4">
+        <h2 class="text-white uppercase tracking-[0.2em] text-sm">"Culinary Excellence"</h2>
+        <h3 class="text-4xl md:text-6xl font-serif text-beige">Our Menu</h3>
+        <div class="menu-filters flex justify-center gap-8 pt-8">
+          <button
+            class="filter-btn  px-8 py-8 uppercase tracking-widest text-gold text-sm border border-gold hover:bg-gold hover:text-dark transition-colors"
+            data-filter="all">All</button>
+          <button
+            class="filter-btn border border-gold px-8 py-8 uppercase tracking-widest text-gold text-sm hover:bg-gold hover:text-dark transition-colors"
+            data-filter="italian">Italian</button>
+          <button
+            class="filter-btn border border-gold px-8 py-8 uppercase tracking-widest text-gold text-sm hover:bg-gold hover:text-dark transition-colors"
+            data-filter="mexican">Mexican</button>
+          <button
+            class="filter-btn border border-gold px-8 py-8 uppercase tracking-widest text-gold text-sm hover:bg-gold hover:text-dark transition-colors"
+            data-filter="chinese">Chinese</button>
+        </div>
+      </div>
 
-    <script type="module" src="/src/main.js"></script>
-  </body>
+      <div class="menu-grid grid grid-cols-1 md:grid-cols-2 gap-x-20 gap-y-16">
+        <!-- Menu Items will be injected via JS -->
+      </div>
+      <br><br><br>
+      <div class="text-center mt-16">
+        <button
+          class="border border-gold  px-12 py-2 uppercase tracking-widest text-gold text-sm hover:bg-dark hover:text-beige transition-colors">See
+          Above Menu</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Real Reviews Section -->
+  <section id="reviews" class="py-32 px-8 bg-dark relative z-20 overflow-hidden">
+    <div class="max-w-7xl mx-auto">
+      <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+        <div>
+          <h2 class="text-white uppercase tracking-[0.2sem] text-sm mb-4 flex items-center gap-4">
+            <span class="w-12 h-[1px] bg-gold"></span> "What people says"
+          </h2>
+          <h3 class="text-4xl md:text-5xl font-serif text-beige">Customer Reviews</h3>
+        </div>
+        <div class="text-right">
+          <p class="text-5xl font-serif text-white mb-2">4.7</p>
+          <div class="flex gap-1 justify-end mb-2">
+            <i data-lucide="star" class="w-4 h-4 text-gold fill-white"></i>
+            <i data-lucide="star" class="w-4 h-4 text-gold fill-white"></i>
+            <i data-lucide="star" class="w-4 h-4 text-gold fill-white"></i>
+            <i data-lucide="star" class="w-4 h-4 text-gold fill-white"></i>
+            <i data-lucide="star-half" class="w-4 h-4 text-gold fill-white"></i>
+          </div>
+          <p class="text-xs uppercase tracking-widest text-beige/50">Based on 150+ Google Reviews</p>
+        </div>
+      </div>
+
+      <!-- Reviews Grid/Slider -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 reviews-container">
+        <!-- Review 1 -->
+        <div
+          class="review-card bg-[#111] p-8 border border-gold/10 hover:border-gold/40 transition-colors duration-500 relative group">
+          <i data-lucide="quote"
+            class="absolute top-8 right-8 w-8 h-8 text-gold/20 group-hover:text-gold/40 transition-colors"></i>
+          <div class="flex items-center gap-4 mb-6">
+            <div
+              class="w-12 h-12 bg-gold/20 rounded-full flex items-center justify-center text-gold font-serif text-xl">U
+            </div>
+            <div>
+              <h4 class="text-beige font-serif text-lg">Utkarsh Vartak</h4>
+              <p class="text-xs text-beige/50 uppercase tracking-wider">Local Guide · 20 days ago</p>
+            </div>
+          </div>
+          <div class="flex gap-1 mb-4">
+            <i data-lucide="star" class="w-3 h-3 text-gold fill-gold"></i>
+            <i data-lucide="star" class="w-3 h-3 text-gold fill-gold"></i>
+            <i data-lucide="star" class="w-3 h-3 text-gold fill-gold"></i>
+            <i data-lucide="star" class="w-3 h-3 text-gold fill-gold"></i>
+            <i data-lucide="star" class="w-3 h-3 text-gold fill-gold"></i>
+          </div>
+          <p class="text-beige/70 font-sans text-sm leading-relaxed mb-6 italic">"We had an absolutely wonderful
+            experience. The menu was outstanding. every dish was beautifully presented and packed with rich, well
+            balanced flavors. Special mention to Mr. Shubham, the owner, who is extremely kind."</p>
+          <div class="flex gap-4 text-xs text-beige/40">
+            <span>Food: 5</span>
+            <span>Service: 5</span>
+            <span>Atmosphere: 5</span>
+          </div>
+        </div>
+
+        <!-- Review 2 -->
+        <div
+          class="review-card bg-[#111] p-8 border border-gold/10 hover:border-gold/40 transition-colors duration-500 relative group">
+          <i data-lucide="quote"
+            class="absolute top-8 right-8 w-8 h-8 text-gold/20 group-hover:text-gold/40 transition-colors"></i>
+          <div class="flex items-center gap-4 mb-6">
+            <div
+              class="w-12 h-12 bg-gold/20 rounded-full flex items-center justify-center text-gold font-serif text-xl">K
+            </div>
+            <div>
+              <h4 class="text-beige font-serif text-lg">Kushal Raut</h4>
+              <p class="text-xs text-beige/50 uppercase tracking-wider">Local Guide · 1 months ago</p>
+            </div>
+          </div>
+          <div class="flex gap-1 mb-4">
+            <i data-lucide="star" class="w-3 h-3 text-gold fill-gold"></i>
+            <i data-lucide="star" class="w-3 h-3 text-gold fill-gold"></i>
+            <i data-lucide="star" class="w-3 h-3 text-gold fill-gold"></i>
+            <i data-lucide="star" class="w-3 h-3 text-gold fill-gold"></i>
+            <i data-lucide="star" class="w-3 h-3 text-gold fill-gold"></i>
+          </div>
+          <p class="text-beige/70 font-sans text-sm leading-relaxed mb-6 italic">"The food quality at the Boisar outlet
+            was outstanding, and most importantly, the consistency was exactly the same as the Mahim (Palghar) outlet.
+            The staff behaviour deserves special appreciation."</p>
+          <div class="flex gap-4 text-xs text-beige/40">
+            <span>Food: 5</span>
+            <span>Service: 5</span>
+            <span>Atmosphere: 4</span>
+          </div>
+        </div>
+
+        <!-- Review 3 -->
+        <div
+          class="review-card bg-[#111] p-8 border border-gold/10 hover:border-gold/40 transition-colors duration-500 relative group">
+          <i data-lucide="quote"
+            class="absolute top-8 right-8 w-8 h-8 text-gold/20 group-hover:text-gold/40 transition-colors"></i>
+          <div class="flex items-center gap-4 mb-6">
+            <div
+              class="w-12 h-12 bg-gold/20 rounded-full flex items-center justify-center text-gold font-serif text-xl">K
+            </div>
+            <div>
+              <h4 class="text-beige font-serif text-lg">Kanak Patil</h4>
+              <p class="text-xs text-beige/50 uppercase tracking-wider">6 reviews · 2 months ago</p>
+            </div>
+          </div>
+          <div class="flex gap-1 mb-4">
+            <i data-lucide="star" class="w-3 h-3 text-gold fill-gold"></i>
+            <i data-lucide="star" class="w-3 h-3 text-gold fill-gold"></i>
+            <i data-lucide="star" class="w-3 h-3 text-gold fill-gold"></i>
+            <i data-lucide="star" class="w-3 h-3 text-gold fill-gold"></i>
+            <i data-lucide="star" class="w-3 h-3 text-gold fill-gold"></i>
+          </div>
+          <p class="text-beige/70 font-sans text-sm leading-relaxed mb-6 italic">"Customer service and food quality was
+            excellent. Shubham guided me with my taste. Easy convince and had great a time."</p>
+          <div class="flex gap-4 text-xs text-beige/40">
+            <span>Highly Recommended</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section id="gallery" class="gallery py-32 bg-[#0a0a0a] relative z-20">
+    <div class="px-8 max-w-7xl mx-auto mb-16 flex justify-between items-end">
+      <div>
+        <h2 class="text-white uppercase tracking-[0.2em] text-sm mb-4">“the vibe said everything”</h2>
+        <h3 class="text-4xl md:text-5xl font-serif text-gold">Gallery</h3>
+      </div>
+
+    </div>
+
+    <!-- Horizontal Scroll Container -->
+    <!-- [USER ACTION REQUIRED: Swap your Gallery Images here] -->
+    <div class="px-8 max-w-7xl mx-auto">
+      <div class="gallery-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="gallery-item w-full aspect-[4/5] overflow-hidden group">
+          <img id="gallery-img-1"
+            src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?q=80&w=2669&auto=format&fit=crop"
+            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+        </div>
+        <div class="gallery-item w-full aspect-[4/5] overflow-hidden group">
+          <img id="gallery-img-2"
+            src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAFg2Q4o8RrTHcgrLOyn99sOBA1I4S1P2_U_esYHHeZ5Bj7Y5qLs4-eJtmZ272AyC8Vy7Ox5FXziqcswpz795EPxHVshYHRwdXakdoYb7zUkypIfKpz5XCxFm1XOXIIC5AISz7IthXT54uX3=s846-k-no"
+            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+        </div>
+        <div class="gallery-item w-full aspect-[4/5] overflow-hidden group">
+          <img id="gallery-img-3"
+            src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=2574&auto=format&fit=crop"
+            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+        </div>
+        <div class="gallery-item w-full aspect-[4/5] overflow-hidden group">
+          <img id="gallery-img-4"
+            src="https://images.unsplash.com/photo-1563379926898-05f4575a45d8?q=80&w=2670&auto=format&fit=crop"
+            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact py-32 px-8 bg-dark relative z-20 border-t border-white/5">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16">
+      <div class="space-y-12">
+        <div>
+          <h2 class="text-gold uppercase tracking-[0.2em] text-sm mb-4">"Directions"</h2>
+          <h3 class="text-4xl md:text-5xl font-serif text-beige">Visit Us</h3>
+        </div>
+
+        <div class="space-y-8">
+          <div class="flex items-start gap-6 group cursor-pointer">
+            <div
+              class="w-12 h-12 rounded-full border border-gold/30 flex items-center justify-center group-hover:bg-gold transition-colors">
+              <i data-lucide="map-pin" class="text-white group-hover:text-dark transition-colors"></i>
+            </div>
+            <div>
+              <p class="text-white font-serif text-2xl mb-2">Location</p>
+              <p style="color: white !important; font-weight: 500 ;" class="text-beige/70 font-sans leading-relaxed">
+                Shop
+                no 101, first floor, Avyu Plaza,<br>Chillar Rd,
+                near Union Park, beside to MCD,<br>East, Boisar, Betegaon, Maharashtra 401501</p>
+              <p style="color: blue !important; font-weight: 500 ;" class="text-gold text-sm mt-2 font-medium">QQMP+4F
+                Boisar, Maharashtra</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-6 group">
+            <div
+              class="w-12 h-12 rounded-full border border-gold/30 flex items-center justify-center group-hover:bg-gold transition-colors">
+              <i data-lucide="clock" class="text-white group-hover:text-dark transition-colors"></i>
+            </div>
+            <div class="w-full">
+              <p class="text-white font-serif text-2xl mb-4">Hours</p>
+              <div style="color: white !important; font-weight: 500 ;"
+                class="grid grid-cols-2 gap-y-2 text-beige/90 font-sans text-sm w-3/4">
+                <span>Monday</span><span>12–11 pm</span>
+                <span>Tuesday</span><span>12–11 pm</span>
+                <span>Wednesday</span><span>12–11 pm</span>
+                <span>Thursday</span><span>12–11 pm</span>
+                <span>Friday</span><span>12–11 pm</span>
+                <span>Saturday</span><span>12–11 pm</span>
+                <span style="color: rgb(225, 6, 6) !important;">Sunday</span><span style="color: red !important;">12–11
+                  pm</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Embedded Google Map -->
+      <div class="bg-white p-4 border border-gold/10 rounded-xl relative overflow-hidden group h-full min-h-[400px]">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3763.5350905389656!2d72.7602058!3d19.8000574!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be71f2b604bcbd9%3A0x882db8ab8303e2db!2sStone%20Oven%20Boisar!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+          width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade" class="rounded-lg">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-black py-16 px-8 border-t border-gold/20 text-center relative z-20">
+    <h2 class="font-serif text-4xl text-gold mb-2 tracking-widest">STONE OVEN</h2>
+    <p class="text-beige/50 text-sm tracking-[0.4em] uppercase mb-8" style="color: white !important;">स्टोन ओवन बोईसर
+    </p>
+
+    <p class="text-white text-xs tracking-wider uppercase">© 2026 Stone Oven Boisar. All Rights Reserved. Premium
+      Dining Experience.</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    lucide.createIcons();
+  </script>
+  <script type="module" src="/src/main.js"></script>
+</body>
+
 </html>

@@ -79,8 +79,10 @@
 
 @media (max-width: 768px) {
   .nav-links {
-    display: none; /* Will implement mobile menu later if needed */
+    display: none;
+    /* Will implement mobile menu later if needed */
   }
+
   .hamburger {
     display: block;
   }

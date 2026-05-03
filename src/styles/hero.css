@@ -8,10 +8,26 @@
 
 /* hero.css */
 .hero { height: 100vh; position: relative; display: flex; align-items: center; justify-content: center; overflow: hidden; }
-#hero-canvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; pointer-events: none; opacity: 0.5; }
 
-.hero-image { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; }
-.hero-image img { width: 100%; height: 100%; object-fit: cover; opacity: 0.4; filter: brightness(0.6); }
+.hero-image { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; overflow: hidden; }
+.hero-image img { width: 100%; height: 100%; object-fit: cover; transform: scale(1); }
+
+/* The Ken Burns Animation (Slow zoom) */
+.ken-burns {
+  animation: kenBurns 20s ease-out forwards;
+}
+@keyframes kenBurns {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.15); }
+}
+
+/* Overlay to ensure text is readable but photo is clear */
+.hero-overlay {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(6, 9, 7, 0.9));
+  z-index: 1;
+}
 
 .hero-content { position: relative; z-index: 2; text-align: center; display: flex; flex-direction: column; align-items: center; width: 100%; padding: 0 4vw; }
 .hero-title { display: flex; flex-direction: column; line-height: 0.85; margin-bottom: 2rem; overflow: hidden; }
