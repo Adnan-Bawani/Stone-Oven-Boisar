@@ -50,7 +50,7 @@ body {
   background-color: var(--color-gold);
 }
 
-.bg-[#111] {
+.bg-\[\#111\] {
   background-color: #111;
 }
 
