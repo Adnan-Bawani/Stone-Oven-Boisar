@@ -790,3 +790,41 @@ footer>* {
 #contact .pointer-events-none {
   display: none !important;
 }
+
+/* --- MOBILE RESPONSIVENESS OVERRIDES --- */
+@media (max-width: 768px) {
+  /* Fix overlapping/merging fonts */
+  h1, h2, h3, h4, h5, h6, p, span {
+    line-height: 1.5 !important;
+    letter-spacing: normal !important;
+  }
+
+  /* Prevent horizontal "movable" layout issues */
+  html, body {
+    overflow-x: hidden !important;
+    position: relative;
+    width: 100%;
+  }
+
+  section, footer {
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
+    overflow-x: hidden !important;
+  }
+
+  /* Adjust section spacing for mobile */
+  .py-32 {
+    padding-top: 4rem !important;
+    padding-bottom: 4rem !important;
+  }
+
+  /* Fix the 'merging' in the About and Menu sections */
+  .about-text, .menu-grid, .reviews-container {
+    gap: 2rem !important;
+  }
+
+  /* Ensure the Logo doesn't overlap on small screens */
+  .logo h1 {
+    font-size: 1.25rem !important;
+  }
+}
